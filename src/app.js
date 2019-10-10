@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 const forcast = require('./utils/forcast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const viewDirectory = path.join(__dirname,'../viewTemplate/views')
 const partialsPath = path.join(__dirname,'../viewTemplate/partials')
@@ -66,6 +67,6 @@ app.get('*',(req,res)=>{
     res.render('404',{title:'404',message:'page not found'})
 })
 
-app.listen(3000,()=>{
-    console.log('server started')
+app.listen(port,()=>{
+    console.log(`server started at ${port}`)
 })

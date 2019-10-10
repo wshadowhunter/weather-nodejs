@@ -9,7 +9,7 @@
 // })
 
 async function fetchWeather(address){
-    const data = await fetch(`http://localhost:3000/weather?address=${address}`)
+    const data = await fetch(`/weather?address=${address}`)
     if(data.error) m1.textContent = data.error 
     else{
         const jsondata = await data.json();
